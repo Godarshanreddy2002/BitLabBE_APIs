@@ -41,7 +41,7 @@ public interface SavedJobRepository extends JpaRepository<SavedJob, Long> {
 	@Query("DELETE FROM SavedJob sj WHERE sj.applicant.id = :applicantId AND sj.job.id = :jobId")
 	int deleteByApplicantIdAndJobId(@Param("applicantId") Long applicantId, @Param("jobId") Long jobId);
 
-	@Query("SELECT sj.job.id FROM SavedJob sj WHERE sj.applicant.id = :applicantId")
+	@Query("SELECT sj.job.id FROM SavedJob sj "+"WHERE sj.applicant.id = :applicantId AND sj.saveJobStatus = 'saved'")
 
 	Set<Long> findJobIdsByApplicantId(@Param("applicantId") long applicantId);
 }
