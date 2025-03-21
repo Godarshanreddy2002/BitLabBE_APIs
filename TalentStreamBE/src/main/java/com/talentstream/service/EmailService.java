@@ -33,13 +33,11 @@ public class EmailService {
     // Configure the JavaMailSender manually
     private JavaMailSenderImpl getJavaMailSender() {
     	String secret = getSecret();
-        System.out.println(secret);
         JSONObject jsonObject = new JSONObject(secret);
         String userName = jsonObject.getString("AWS_EMAIL_USERNAME");
         String passWord = jsonObject.getString("AWS_EMAIL_PASSWORD");
         
-        System.out.println(userName);
-        System.out.println(passWord);
+
         
 //        String userName ="AKIAWDMD3L7MQ6XDXLIN";
 //        String passWord ="BLLaxHrv++8qqIsx73mO1KZq225tXqIHYMQBM2EYgToK";

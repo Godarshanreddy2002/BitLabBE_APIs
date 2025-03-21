@@ -435,8 +435,6 @@ public void updatePassword(String userEmail, String newPassword) {
             // Access the resetToken
             String resetToken = jsonResponse.get("resetToken").getAsString();
 
-            // Print the resetToken
-            System.out.println("Reset Token: " + resetToken);
 
             // Step 2: Reset Password
             JsonObject payloadForPasswordReset = new JsonObject();

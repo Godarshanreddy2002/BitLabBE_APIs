@@ -399,9 +399,6 @@ public class RegisterController {
 		try {
 			String otp = verificationRequest.getOtp();
 			String email = verificationRequest.getEmail();
-			logger.info("Verifying OTP for email: {}, OTP: {}", email, otp);
-			System.out.println(otp + email);
-
 			if (otpService.validateOtp(email, otp)) {
 				logger.info("OTP verified successfully for email: {}", email);
 				return ResponseEntity.ok("OTP verified successfully");

@@ -100,10 +100,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
             }
         }
 
-        // Log relevant information for debugging
-        logger.debug("Authorization Header: " + authorizationHeader);
-        logger.debug("JWT: " + jwt);
-        logger.debug("Username: " + username);
 
         chain.doFilter(request, response);
     }
